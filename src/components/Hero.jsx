@@ -99,7 +99,7 @@ const Hero = () => {
               >
                 <span className="h-2 w-2 rounded-full bg-[#00e5ff] animate-pulse-glow shadow-[0_0_6px_#00e5ff]" />
                 <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#00e5ff]">
-                  System Online · Live Trading
+                  Sistem Trading Generasi Berikutnya
                 </span>
               </div>
 
@@ -108,11 +108,10 @@ const Hero = () => {
                 className="mt-6 font-display text-4xl font-black leading-[1.1] md:text-5xl xl:text-6xl animate-fade-in-up opacity-0"
                 style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
               >
-                <span className="text-white">Teknologi</span>
+                <span className="text-white">Teknologi Perdaganagn Kuantitaif untuk</span>
                 <br />
-                <span className="text-gradient-gold">Perdagangan</span>
+                <span className="text-gradient-gold">Pasar Keuangan Global</span>
                 <br />
-                <span className="neon-cyan">Kuantitatif</span>
               </h1>
 
               <p
