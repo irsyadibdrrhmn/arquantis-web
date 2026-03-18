@@ -75,9 +75,9 @@ const Hero = () => {
       <div className="absolute inset-0 hero-grid opacity-100" />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#c9a45c] opacity-[0.04] blur-[120px] animate-pulse-glow" />
-      <div className="absolute top-1/3 right-1/4 h-[400px] w-[400px] rounded-full bg-[#00e5ff] opacity-[0.04] blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
-      <div className="absolute bottom-1/4 left-1/2 h-[300px] w-[300px] rounded-full bg-[#ff2d78] opacity-[0.03] blur-[80px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/4 left-1/4 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#c9a45c] opacity-[0.04] blur-[120px] animate-pulse-glow" />
+      <div className="absolute top-1/3 right-1/4 h-[200px] w-[200px] rounded-full bg-[#00e5ff] opacity-[0.04] blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
+      <div className="absolute bottom-1/4 left-1/2 h-[100px] w-[100px] rounded-full bg-[#ff2d78] opacity-[0.03] blur-[80px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       {/* Corner decorations */}
       <div className="absolute top-20 left-6 w-16 h-16 border-l-2 border-t-2 border-[rgba(0,229,255,0.3)] rounded-tl-lg" />
