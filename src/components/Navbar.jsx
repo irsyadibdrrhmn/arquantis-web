@@ -35,8 +35,8 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-4">
           <Link to="/" onClick={closeMenu} className="flex items-center gap-3">
-            <span className="text-2xl font-bold tracking-tight text-[#C9A45C]">
-              Arquantis
+            <span className="text-1xl font-bold tracking-tight text-[#C9A45C]">
+              ARQUANTIS TEKNOLOGI INVESTAMA
             </span>
           </Link>
 
