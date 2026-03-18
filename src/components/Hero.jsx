@@ -108,7 +108,7 @@ const Hero = () => {
                 className="mt-6 font-display text-4xl font-black leading-[1.1] md:text-5xl xl:text-6xl animate-fade-in-up opacity-0"
                 style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
               >
-                <span className="text-white">Teknologi Perdaganagn Kuantitaif untuk</span>
+                <span className="text-white">Teknologi Perdagangn Kuantitaif untuk</span>
                 <br />
                 <span className="text-gradient-gold">Pasar Keuangan Global</span>
                 <br />
