@@ -1,38 +1,56 @@
 import Layout from "../components/Layout";
 import About from "../components/About";
+import PageHero from "../components/PageHero";
 
 const AboutPage = () => {
   return (
     <Layout>
-      <section className="bg-gradient-to-br from-[#081526] to-[#102845] pt-32 pb-16">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <p className="text-sm uppercase tracking-[0.25em] text-[#E0C68A]">
-            Company Profile
-          </p>
-
-          <h1 className="mt-3 text-4xl font-bold text-white md:text-6xl">
-            Tentang Kami
-          </h1>
-
-          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-[#D9DEE7]">
-            Profil perusahaan dengan pendekatan teknologi, riset kuantitatif,
-            dan sistem perdagangan modern yang dirancang untuk skala global.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Company_Profile"
+        title={
+          <>
+            Tentang{" "}
+            <span style={{ background: "linear-gradient(135deg,#e0c68a,#c9a45c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Arquantis
+            </span>
+          </>
+        }
+        subtitle="Profil perusahaan dengan pendekatan teknologi, riset kuantitatif, dan sistem perdagangan modern yang dirancang untuk skala global."
+        accent="gold"
+      />
 
       <About />
 
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="rounded-[32px] bg-gradient-to-r from-[#081526] to-[#102845] px-8 py-14 text-center shadow-[0_20px_80px_rgba(8,21,38,0.16)]">
-            <p className="text-sm uppercase tracking-[0.25em] text-[#E0C68A]">
-              Positioning Statement
-            </p>
+      {/* Positioning statement */}
+      <section style={{ background: "#081526", position: "relative", padding: "80px 0", overflow: "hidden" }}>
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          backgroundImage: "linear-gradient(rgba(201,164,92,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,164,92,0.05) 1px,transparent 1px)",
+          backgroundSize: "60px 60px",
+        }} />
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 500, height: 500, background: "#c9a45c", opacity: 0.02, filter: "blur(120px)", borderRadius: "50%", pointerEvents: "none" }} />
 
-            <h2 className="mx-auto mt-5 max-w-4xl text-3xl font-bold leading-tight text-white md:text-4xl">
-              Innovative Investment Solutions. Global Vision, Quant Precision.
+        <div style={{ position: "relative", maxWidth: 896, margin: "0 auto", padding: "0 24px" }}>
+          <div style={{
+            borderRadius: 20, border: "1px solid rgba(201,164,92,0.2)", background: "rgba(5,13,26,0.8)",
+            padding: "56px 48px", textAlign: "center", backdropFilter: "blur(20px)",
+          }}>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "0.35em", textTransform: "uppercase", color: "#c9a45c" }}>
+              // Positioning_Statement
+            </span>
+            <h2 style={{ fontFamily: "'Orbitron',monospace", fontSize: 28, fontWeight: 900, color: "#fff", marginTop: 20, marginBottom: 0, lineHeight: 1.3 }}>
+              Innovative Investment Solutions.
+              <br />
+              <span style={{ background: "linear-gradient(135deg,#e0c68a,#c9a45c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                Global Vision
+              </span>
+              {", "}
+              <span style={{ color: "#00e5ff", textShadow: "0 0 15px rgba(0,229,255,0.4)" }}>
+                Quant Precision
+              </span>
+              .
             </h2>
+            <div style={{ marginTop: 28, height: 1, width: 120, margin: "28px auto 0", background: "linear-gradient(90deg,transparent,rgba(201,164,92,0.5),transparent)" }} />
           </div>
         </div>
       </section>

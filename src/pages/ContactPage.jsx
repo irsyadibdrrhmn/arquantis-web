@@ -1,127 +1,205 @@
 import Layout from "../components/Layout";
+import PageHero from "../components/PageHero";
 
-const contactCards = [
-  {
-    title: "Informasi Umum",
-    desc: "Pertanyaan umum tentang perusahaan dan layanan kami.",
-    value: "info@arquantis.com",
-  },
-  {
-    title: "Kerjasama Bisnis",
-    desc: "Untuk peluang kolaborasi, partnership, dan integrasi bisnis.",
-    value: "partnership@arquantis.com",
-  },
-  {
-    title: "Hubungan Investor",
-    desc: "Komunikasi terkait kemitraan investasi dan institusional.",
-    value: "investor@arquantis.com",
-  },
+const contactChannels = [
+  { title: "Informasi Umum", desc: "Pertanyaan umum tentang perusahaan dan layanan kami.", value: "info@arquantis.com", color: "#00e5ff", icon: "◈", code: "CH-01" },
+  { title: "Kerjasama Bisnis", desc: "Untuk peluang kolaborasi, partnership, dan integrasi bisnis.", value: "partnership@arquantis.com", color: "#c9a45c", icon: "⬡", code: "CH-02" },
+  { title: "Hubungan Investor", desc: "Komunikasi terkait kemitraan investasi dan institusional.", value: "investor@arquantis.com", color: "#ff2d78", icon: "◉", code: "CH-03" },
 ];
+
+const bgDark = "#050d1a";
+const bgCard = "rgba(8,21,38,0.85)";
+
+const inputStyle = {
+  width: "100%", borderRadius: 12, padding: "14px 16px",
+  background: "rgba(5,13,26,0.9)", border: "1px solid rgba(255,255,255,0.07)",
+  color: "#e8edf5", fontSize: 13, outline: "none",
+  fontFamily: "'JetBrains Mono',monospace", boxSizing: "border-box",
+};
+
+const labelStyle = {
+  display: "block", fontFamily: "'JetBrains Mono',monospace",
+  fontSize: 9, letterSpacing: "0.25em", textTransform: "uppercase",
+  color: "#7a8fa6", marginBottom: 8,
+};
 
 const ContactPage = () => {
   return (
     <Layout>
-      <section className="bg-gradient-to-br from-[#081526] to-[#102845] pt-32 pb-16">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <p className="text-sm uppercase tracking-[0.25em] text-[#E0C68A]">
-            Contact
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-white md:text-6xl">
-            Hubungi Kami
-          </h1>
-          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-[#D9DEE7]">
-            Kami siap menjawab pertanyaan Anda dan mendiskusikan potensi
-            kolaborasi.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title={
+          <>
+            Hubungi{" "}
+            <span style={{ color: "#00e5ff", textShadow: "0 0 20px rgba(0,229,255,0.5)" }}>
+              Kami
+            </span>
+          </>
+        }
+        subtitle="Kami siap menjawab pertanyaan Anda dan mendiskusikan potensi kolaborasi bersama tim ahli kami."
+        accent="cyan"
+      />
 
-      <section className="bg-[#F5F7FB] py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <section style={{ background: bgDark, position: "relative", padding: "96px 0", overflow: "hidden" }}>
+        {/* bg grid */}
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          backgroundImage: "linear-gradient(rgba(0,229,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.04) 1px,transparent 1px)",
+          backgroundSize: "60px 60px",
+        }} />
+        <div style={{ position: "absolute", top: "30%", left: 0, width: 400, height: 400, background: "#00e5ff", opacity: 0.02, filter: "blur(100px)", borderRadius: "50%", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "20%", right: "10%", width: 350, height: 350, background: "#c9a45c", opacity: 0.025, filter: "blur(90px)", borderRadius: "50%", pointerEvents: "none" }} />
+
+        <div style={{ position: "relative", maxWidth: 1152, margin: "0 auto", padding: "0 24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 40, alignItems: "start" }}>
+
+            {/* LEFT: channels */}
             <div>
-              <h2 className="text-3xl font-bold text-[#081526]">
-                Saluran Komunikasi
-              </h2>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
+                <div style={{ height: 1, width: 24, background: "#00e5ff" }} />
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00e5ff" }}>
+                  // Saluran_Komunikasi
+                </span>
+              </div>
 
-              <div className="mt-8 space-y-6">
-                {contactCards.map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-3xl border border-[#C9A45C]/15 bg-white p-8 shadow-[0_10px_30px_rgba(8,21,38,0.08)]"
-                  >
-                    <div className="mb-5 h-14 w-14 rounded-2xl bg-[#EEF3F8]" />
-                    <h3 className="text-2xl font-bold text-[#081526]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-[#5A6B7F]">{item.desc}</p>
-                    <p className="mt-5 font-medium text-[#102845]">
-                      {item.value}
-                    </p>
+              {contactChannels.map((item, i) => (
+                <div
+                  key={i}
+                  className="card-hover group"
+                  style={{ position: "relative", borderRadius: 16, border: "1px solid rgba(255,255,255,0.06)", background: bgCard, padding: 24, marginBottom: 16, overflow: "hidden" }}
+                >
+                  <div style={{
+                    position: "absolute", inset: 0, borderRadius: 16, pointerEvents: "none",
+                    background: `radial-gradient(circle at top left, ${item.color}0c 0%, transparent 60%)`,
+                    opacity: 0, transition: "opacity 0.4s",
+                  }} className="group-hover:opacity-100" />
+                  <div style={{
+                    position: "absolute", top: 0, left: 0, right: 0, height: 1, pointerEvents: "none",
+                    background: `linear-gradient(90deg,transparent,${item.color},transparent)`,
+                    opacity: 0, transition: "opacity 0.4s",
+                  }} className="group-hover:opacity-100" />
+
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+                    <div style={{
+                      width: 44, height: 44, borderRadius: 12, flexShrink: 0,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: 18, color: item.color,
+                      border: `1px solid ${item.color}30`, background: `${item.color}10`,
+                      textShadow: `0 0 10px ${item.color}`,
+                    }}>
+                      {item.icon}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                        <h3 style={{ fontFamily: "'Orbitron',monospace", fontSize: 13, fontWeight: 700, color: "#fff", margin: 0 }}>
+                          {item.title}
+                        </h3>
+                        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", color: item.color }}>
+                          {item.code}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 12, lineHeight: 1.7, color: "#7a8fa6", marginBottom: 10 }}>{item.desc}</p>
+                      <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: item.color, textShadow: `0 0 8px ${item.color}40`, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        {item.value}
+                      </div>
+                    </div>
                   </div>
-                ))}
+                </div>
+              ))}
+
+              {/* Office card */}
+              <div style={{ borderRadius: 16, border: "1px solid rgba(201,164,92,0.15)", background: "rgba(8,21,38,0.7)", padding: 20 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                  <div className="animate-pulse-glow" style={{ width: 8, height: 8, borderRadius: "50%", background: "#c9a45c", boxShadow: "0 0 6px #c9a45c" }} />
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.25em", textTransform: "uppercase", color: "#c9a45c" }}>
+                    // Office
+                  </span>
+                </div>
+                <p style={{ fontFamily: "'Orbitron',monospace", fontSize: 14, fontWeight: 700, color: "#fff", margin: "0 0 6px" }}>
+                  Jakarta, Indonesia
+                </p>
+                <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#7a8fa6", margin: 0 }}>
+                  GMT+7 · Mon–Fri 09:00–18:00 WIB
+                </p>
               </div>
             </div>
 
-            <div className="rounded-[30px] border border-[#C9A45C]/15 bg-white p-8 shadow-[0_10px_30px_rgba(8,21,38,0.08)]">
-              <h2 className="text-4xl font-bold text-[#081526]">
-                Kirim Pesan
+            {/* RIGHT: Form */}
+            <div style={{
+              position: "relative", borderRadius: 20,
+              border: "1px solid rgba(0,229,255,0.15)", background: "rgba(8,21,38,0.75)",
+              padding: 36, overflow: "hidden", backdropFilter: "blur(20px)",
+              boxShadow: "0 0 60px rgba(0,229,255,0.04)",
+            }}>
+              {/* form header */}
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 28, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                <div style={{ display: "flex", gap: 6 }}>
+                  {["#ff2d78","#c9a45c","#00e5ff"].map((c, i) => (
+                    <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c, opacity: 0.8 }} />
+                  ))}
+                </div>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.25em", color: "#7a8fa6", marginLeft: 8 }}>
+                  message_composer.jsx
+                </span>
+              </div>
+
+              <h2 style={{ fontFamily: "'Orbitron',monospace", fontSize: 24, fontWeight: 900, color: "#fff", marginBottom: 28 }}>
+                Kirim{" "}
+                <span style={{ color: "#00e5ff", textShadow: "0 0 15px rgba(0,229,255,0.4)" }}>Pesan</span>
               </h2>
 
-              <form className="mt-8 space-y-6">
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div>
-                    <label className="mb-3 block text-sm font-medium text-[#081526]">
-                      Nama Lengkap
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className="w-full rounded-xl border border-[#D9DEE7] bg-[#F8FAFC] px-4 py-4 text-[#081526] outline-none placeholder:text-[#7C8896] focus:border-[#C9A45C]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-3 block text-sm font-medium text-[#081526]">
-                      Alamat Email
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      className="w-full rounded-xl border border-[#D9DEE7] bg-[#F8FAFC] px-4 py-4 text-[#081526] outline-none placeholder:text-[#7C8896] focus:border-[#C9A45C]"
-                    />
-                  </div>
-                </div>
-
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-[#081526]">
-                    Subjek
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Pertanyaan tentang kemitraan"
-                    className="w-full rounded-xl border border-[#D9DEE7] bg-[#F8FAFC] px-4 py-4 text-[#081526] outline-none placeholder:text-[#7C8896] focus:border-[#C9A45C]"
-                  />
+                  <label style={labelStyle}>Nama Lengkap</label>
+                  <input type="text" placeholder="John Doe" style={inputStyle} />
                 </div>
-
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-[#081526]">
-                    Pesan
-                  </label>
-                  <textarea
-                    rows="6"
-                    placeholder="Tulis pesan Anda di sini..."
-                    className="w-full rounded-xl border border-[#D9DEE7] bg-[#F8FAFC] px-4 py-4 text-[#081526] outline-none placeholder:text-[#7C8896] focus:border-[#C9A45C]"
-                  ></textarea>
+                  <label style={labelStyle}>Alamat Email</label>
+                  <input type="email" placeholder="john@example.com" style={inputStyle} />
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  className="rounded-xl bg-[#102845] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#081526]"
-                >
+              <div style={{ marginBottom: 16 }}>
+                <label style={labelStyle}>Subjek</label>
+                <input type="text" placeholder="Pertanyaan tentang kemitraan" style={inputStyle} />
+              </div>
+
+              <div style={{ marginBottom: 16 }}>
+                <label style={labelStyle}>Kategori</label>
+                <select style={{ ...inputStyle, color: "#7a8fa6", appearance: "none" }}>
+                  <option value="">Pilih kategori...</option>
+                  <option value="general">Informasi Umum</option>
+                  <option value="partner">Kerjasama Bisnis</option>
+                  <option value="investor">Hubungan Investor</option>
+                  <option value="tech">Teknologi</option>
+                </select>
+              </div>
+
+              <div style={{ marginBottom: 24 }}>
+                <label style={labelStyle}>Pesan</label>
+                <textarea
+                  rows={5}
+                  placeholder="Tulis pesan Anda di sini..."
+                  style={{ ...inputStyle, resize: "none" }}
+                />
+              </div>
+
+              <button className="relative overflow-hidden rounded-xl" style={{ width: "100%" }}>
+                <span className="absolute inset-0 btn-shimmer" />
+                <span className="relative flex items-center justify-center gap-3" style={{ padding: "15px 28px", fontFamily: "'Orbitron',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#050d1a" }}>
                   Kirim Pesan
-                </button>
-              </form>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+
+              <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5070", textAlign: "center", marginTop: 16, letterSpacing: "0.1em" }}>
+                Kami merespons dalam 1-2 hari kerja
+              </p>
+
+              {/* corner decoration */}
+              <div style={{ position: "absolute", bottom: 0, right: 0, width: 80, height: 80, borderRight: "2px solid rgba(0,229,255,0.08)", borderBottom: "2px solid rgba(0,229,255,0.08)", borderBottomRightRadius: 20, pointerEvents: "none" }} />
             </div>
           </div>
         </div>

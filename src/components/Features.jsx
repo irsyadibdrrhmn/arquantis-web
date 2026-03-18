@@ -1,43 +1,127 @@
-import Card from "./Card";
-
 const features = [
   {
+    icon: "◈",
     title: "Riset Kuantitatif",
     desc: "Model statistik dan analitik mendalam untuk menemukan peluang alpha di pasar kompleks.",
+    color: "#00e5ff",
+    accent: "rgba(0,229,255,0.1)",
   },
   {
-    title: "Perdaganan Algoritmik",
+    icon: "⬡",
+    title: "Perdagangan Algoritmik",
     desc: "Mesin eksekusi modern dengan fokus pada konsistensi, presisi, dan efisiensi biaya.",
+    color: "#c9a45c",
+    accent: "rgba(201,164,92,0.1)",
   },
   {
+    icon: "◉",
     title: "Manajemen Risiko",
     desc: "Pemantauan eksposur, volatilitas, dan stabilitas strategi secara real-time.",
+    color: "#ff2d78",
+    accent: "rgba(255,45,120,0.1)",
   },
 ];
 
 const Features = () => {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center">
-          <p className="text-sm uppercase tracking-[0.25em] text-[#C9A45C]">
-            Keunggulan
-          </p>
-          <h2 className="mt-4 text-3xl font-bold text-[#081526] md:text-5xl">
-            Keunggulan Teknologi Kami
+    <section className="relative bg-[#081526] py-28 overflow-hidden">
+      {/* top divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(0,229,255,0.4)] to-transparent" />
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[600px] rounded-full bg-[#00e5ff] opacity-[0.02] blur-[120px]" />
+
+      <div className="relative mx-auto max-w-6xl px-6">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-[rgba(0,229,255,0.5)]" />
+            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-[#00e5ff]">// Keunggulan</span>
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-[rgba(0,229,255,0.5)]" />
+          </div>
+
+          <h2 className="font-display text-3xl font-black text-white md:text-4xl xl:text-5xl">
+            Keunggulan{" "}
+            <span className="neon-cyan">Teknologi</span>{" "}
+            <span className="text-gradient-gold">Kami</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-[#5A6B7F]">
-            Infrastruktur modern untuk quantitative trading yang efisien,
-            adaptif, dan dibangun untuk skala institusional.
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#7a8fa6]">
+            Infrastruktur modern untuk quantitative trading yang efisien, adaptif, dan dibangun untuk skala institusional.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((item, index) => (
-            <Card key={index} title={item.title} desc={item.desc} />
+        {/* Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {features.map((item, i) => (
+            <div
+              key={i}
+              className="relative rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(5,13,26,0.8)] p-8 card-hover group overflow-hidden"
+            >
+              {/* Hover glow */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                style={{ background: `radial-gradient(circle at center, ${item.accent} 0%, transparent 70%)` }}
+              />
+
+              {/* Top border glow */}
+              <div
+                className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }}
+              />
+
+              {/* Icon */}
+              <div
+                className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl text-2xl border"
+                style={{
+                  borderColor: `${item.color}30`,
+                  backgroundColor: `${item.color}10`,
+                  color: item.color,
+                  textShadow: `0 0 12px ${item.color}`,
+                }}
+              >
+                {item.icon}
+              </div>
+
+              <h3 className="font-display text-lg font-bold text-white mb-3">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-7 text-[#7a8fa6]">{item.desc}</p>
+
+              {/* Bottom accent */}
+              <div className="mt-6 flex items-center gap-2">
+                <div className="h-px flex-1" style={{ background: `linear-gradient(90deg, ${item.color}40, transparent)` }} />
+                <span className="font-mono text-[9px] tracking-[0.2em] uppercase" style={{ color: item.color }}>
+                  Pelajari →
+                </span>
+              </div>
+
+              {/* Corner dot */}
+              <div
+                className="absolute bottom-4 right-4 h-2 w-2 rounded-full opacity-50"
+                style={{ backgroundColor: item.color, boxShadow: `0 0 8px ${item.color}` }}
+              />
+            </div>
           ))}
         </div>
+
+        {/* Stats bar */}
+        <div className="mt-16 rounded-2xl border border-[rgba(201,164,92,0.15)] bg-[rgba(8,21,38,0.6)] p-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-[rgba(255,255,255,0.06)]">
+            {[
+              { val: "4+", label: "Kelas Aset" },
+              { val: "99.97%", label: "System Uptime" },
+              { val: "< 1ms", label: "Order Latency" },
+              { val: "100%", label: "Automated" },
+            ].map((s, i) => (
+              <div key={i} className={`text-center ${i > 0 ? "pl-8" : ""}`}>
+                <div className="font-display text-2xl font-black text-gradient-gold">{s.val}</div>
+                <div className="mt-1 font-mono text-[10px] tracking-[0.2em] uppercase text-[#7a8fa6]">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(201,164,92,0.3)] to-transparent" />
     </section>
   );
 };
