@@ -26,34 +26,36 @@ const researchItems = [
 const ResearchPage = () => {
   return (
     <Layout>
-      <section className="bg-[#050B14] pt-32 pb-10">
+      <section className="bg-gradient-to-br from-[#081526] to-[#102845] pt-32 pb-16">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <p className="text-sm uppercase tracking-[0.25em] text-cyan-400">
+          <p className="text-sm uppercase tracking-[0.25em] text-[#E0C68A]">
             Research
           </p>
-          <h1 className="mt-3 text-4xl font-bold md:text-6xl">
+          <h1 className="mt-3 text-4xl font-bold text-white md:text-6xl">
             Riset Kuantitatif
           </h1>
-          <p className="mx-auto mt-5 max-w-4xl text-lg text-gray-400">
+          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-[#D9DEE7]">
             Riset adalah inti dari DNA kami. Kami terus mengeksplorasi
             batas-batas ilmu data keuangan untuk menemukan sumber alpha baru.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#050B14] py-16">
+      <section className="bg-[#F5F7FB] py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {researchItems.map((item, index) => (
               <div
                 key={index}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_8px_30px_rgba(0,0,0,0.15)] backdrop-blur"
+                className="rounded-3xl border border-[#C9A45C]/15 bg-white p-8 shadow-[0_10px_30px_rgba(8,21,38,0.08)]"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400/20 to-blue-500/20 text-cyan-300">
-                  <span className="text-2xl font-bold">{index + 1}</span>
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#102845] text-lg font-bold text-white">
+                  {index + 1}
                 </div>
-                <h3 className="text-2xl font-bold leading-snug">{item.title}</h3>
-                <p className="mt-4 leading-8 text-gray-400">{item.desc}</p>
+                <h3 className="text-2xl font-bold leading-snug text-[#081526]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-8 text-[#5A6B7F]">{item.desc}</p>
               </div>
             ))}
           </div>

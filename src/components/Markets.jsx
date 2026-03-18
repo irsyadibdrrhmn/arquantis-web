@@ -1,31 +1,45 @@
 import Card from "./Card";
 
+const markets = [
+  {
+    title: "Forex",
+    desc: "Strategi tren, mean reversion, dan liquidity-driven execution untuk pasar valuta asing global.",
+  },
+  {
+    title: "Crypto",
+    desc: "Model adaptif untuk memanfaatkan volatilitas tinggi dan market inefficiency pada aset digital.",
+  },
+  {
+    title: "Commodities",
+    desc: "Eksposur terukur pada energi, logam, dan komoditas utama dengan pendekatan kuantitatif.",
+  },
+  {
+    title: "Derivatives",
+    desc: "Optimasi hedging, spread, dan pendekatan risiko sistematis untuk instrumen turunan.",
+  },
+];
+
 const Markets = () => {
   return (
-    <section className="bg-[#08111F] py-24">
+    <section className="bg-[#F8FAFC] py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-center text-3xl font-bold">Cakupan Pasar Global</h2>
-        <p className="mt-3 text-center text-gray-400">
-          Strategi lintas aset untuk berbagai kondisi pasar.
-        </p>
+        <div className="text-center">
+          <p className="text-sm uppercase tracking-[0.25em] text-[#C9A45C]">
+            Market Coverage
+          </p>
+          <h2 className="mt-4 text-3xl font-bold text-[#081526] md:text-5xl">
+            Cakupan Pasar Global
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-[#5A6B7F]">
+            Strategi lintas aset yang dirancang untuk merespons berbagai
+            karakter pasar dengan disiplin eksekusi dan manajemen risiko.
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <Card
-            title="Forex"
-            desc="Strategi tren, mean reversion, dan liquidity-driven execution."
-          />
-          <Card
-            title="Crypto"
-            desc="Adaptasi cepat terhadap volatilitas tinggi dan market inefficiency."
-          />
-          <Card
-            title="Commodities"
-            desc="Eksposur terukur pada pasar energi, logam, dan komoditas utama."
-          />
-          <Card
-            title="Derivatives"
-            desc="Optimasi hedging, spread, dan pendekatan risiko sistematis."
-          />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {markets.map((item, index) => (
+            <Card key={index} title={item.title} desc={item.desc} />
+          ))}
         </div>
       </div>
     </section>
