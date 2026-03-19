@@ -41,11 +41,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
             
-            <div className="hidden sm:block">
+            <div className="block">
               <span className="font-display text-xs font-bold tracking-[0.15em] text-[#c9a45c] uppercase">
                 Arquantis
               </span>
-              <div className="text-[9px] tracking-[0.3em] text-[#7a8fa6] uppercase font-mono">
+              <div className="hidden sm:block text-[9px] tracking-[0.3em] text-[#7a8fa6] uppercase font-mono">
                 Teknologi Investama
               </div>
             </div>
