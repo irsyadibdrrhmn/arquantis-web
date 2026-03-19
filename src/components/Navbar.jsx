@@ -1,18 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-
-const navItems = [
-  { label: "Beranda", path: "/" },
-  { label: "Tentang", path: "/about" },
-  { label: "Teknologi", path: "/technology" },
-  { label: "Produk", path: "/products" },
-  { label: "Kinerja", path: "/performance" },
-  { label: "Riset", path: "/research" },
-  { label: "Investor", path: "/investor" },
-  { label: "Kontak", path: "/contact" },
-];
+import { useLang } from "../context/LangContext";
 
 const Navbar = () => {
+  const { lang, toggle, t } = useLang();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,6 +12,17 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navItems = [
+    { key: "home",        path: "/" },
+    { key: "about",       path: "/about" },
+    { key: "technology",  path: "/technology" },
+    { key: "products",    path: "/products" },
+    { key: "performance", path: "/performance" },
+    { key: "research",    path: "/research" },
+    { key: "investor",    path: "/investor" },
+    { key: "contact",     path: "/contact" },
+  ];
 
   return (
     <nav
@@ -35,6 +37,7 @@ const Navbar = () => {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-4">
+
           {/* Logo */}
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
             
@@ -49,7 +52,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -57,15 +60,13 @@ const Navbar = () => {
                 end={item.path === "/"}
                 className={({ isActive }) =>
                   `relative px-3 py-2 text-xs font-semibold tracking-[0.1em] uppercase transition-all duration-200 ${
-                    isActive
-                      ? "text-[#00e5ff]"
-                      : "text-[#7a8fa6] hover:text-[#c9a45c]"
+                    isActive ? "text-[#00e5ff]" : "text-[#7a8fa6] hover:text-[#c9a45c]"
                   }`
                 }
               >
                 {({ isActive }) => (
                   <>
-                    {item.label}
+                    {t("nav", item.key)}
                     {isActive && (
                       <span className="absolute bottom-0 left-1/2 h-[2px] w-4 -translate-x-1/2 rounded-full bg-[#00e5ff] shadow-[0_0_8px_#00e5ff]" />
                     )}
@@ -75,33 +76,75 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Right: Lang toggle + CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Language switcher */}
+            <button
+              onClick={toggle}
+              className="relative flex items-center rounded-lg border border-[rgba(201,164,92,0.25)] bg-[rgba(201,164,92,0.05)] p-1 transition-all hover:border-[rgba(201,164,92,0.5)] hover:bg-[rgba(201,164,92,0.1)]"
+              title={lang === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
+            >
+              <span
+                className={`flex h-6 w-8 items-center justify-center rounded text-[10px] font-black tracking-[0.12em] uppercase transition-all duration-200 ${
+                  lang === "id"
+                    ? "bg-[#c9a45c] text-[#050d1a] shadow-[0_0_8px_rgba(201,164,92,0.5)]"
+                    : "text-[#7a8fa6]"
+                }`}
+              >
+                ID
+              </span>
+              <span className="mx-0.5 text-[8px] text-[rgba(201,164,92,0.3)]">|</span>
+              <span
+                className={`flex h-6 w-8 items-center justify-center rounded text-[10px] font-black tracking-[0.12em] uppercase transition-all duration-200 ${
+                  lang === "en"
+                    ? "bg-[#00e5ff] text-[#050d1a] shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+                    : "text-[#7a8fa6]"
+                }`}
+              >
+                EN
+              </span>
+            </button>
+
+            {/* CTA button */}
             <Link
               to="/contact"
               className="relative overflow-hidden rounded-lg px-4 py-2 text-xs font-bold tracking-[0.1em] uppercase transition-all duration-200 group"
             >
               <span className="absolute inset-0 border border-[rgba(201,164,92,0.4)] rounded-lg group-hover:border-[#c9a45c] transition-colors" />
               <span className="absolute inset-0 rounded-lg bg-[rgba(201,164,92,0.05)] group-hover:bg-[rgba(201,164,92,0.12)] transition-colors" />
-              <span className="relative text-[#c9a45c]">Hubungi Kami</span>
+              <span className="relative text-[#c9a45c]">{t("nav", "cta")}</span>
             </Link>
           </div>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setIsOpen((p) => !p)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[rgba(201,164,92,0.2)] md:hidden"
-          >
-            <div className="relative h-4 w-5">
-              <span className={`absolute left-0 top-0 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "top-2 rotate-45" : ""}`} />
-              <span className={`absolute left-0 top-2 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "opacity-0" : ""}`} />
-              <span className={`absolute left-0 top-4 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "top-2 -rotate-45" : ""}`} />
-            </div>
-          </button>
+          {/* Mobile: lang toggle + hamburger */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={toggle}
+              className="flex items-center rounded-lg border border-[rgba(201,164,92,0.25)] bg-[rgba(201,164,92,0.05)] p-1"
+            >
+              <span className={`flex h-5 w-7 items-center justify-center rounded text-[9px] font-black tracking-widest uppercase transition-all ${lang === "id" ? "bg-[#c9a45c] text-[#050d1a]" : "text-[#7a8fa6]"}`}>
+                ID
+              </span>
+              <span className="mx-0.5 text-[7px] text-[rgba(201,164,92,0.3)]">|</span>
+              <span className={`flex h-5 w-7 items-center justify-center rounded text-[9px] font-black tracking-widest uppercase transition-all ${lang === "en" ? "bg-[#00e5ff] text-[#050d1a]" : "text-[#7a8fa6]"}`}>
+                EN
+              </span>
+            </button>
+            <button
+              onClick={() => setIsOpen((p) => !p)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[rgba(201,164,92,0.2)]"
+            >
+              <div className="relative h-4 w-5">
+                <span className={`absolute left-0 top-0 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "top-2 rotate-45" : ""}`} />
+                <span className={`absolute left-0 top-2 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "opacity-0" : ""}`} />
+                <span className={`absolute left-0 top-4 h-[2px] w-full rounded-full bg-[#c9a45c] transition-all ${isOpen ? "top-2 -rotate-45" : ""}`} />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
-        <div className={`overflow-hidden transition-all duration-300 md:hidden ${isOpen ? "max-h-[600px] pb-4" : "max-h-0"}`}>
+        <div className={`overflow-hidden transition-all duration-300 lg:hidden ${isOpen ? "max-h-[600px] pb-4" : "max-h-0"}`}>
           <div className="rounded-xl border border-[rgba(201,164,92,0.15)] bg-[rgba(5,13,26,0.95)] backdrop-blur-xl p-3">
             {navItems.map((item) => (
               <NavLink
@@ -117,7 +160,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                {item.label}
+                {t("nav", item.key)}
               </NavLink>
             ))}
           </div>
