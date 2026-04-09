@@ -5,16 +5,26 @@ import { useLang } from "../context/LangContext";
 const bgDark = "#050d1a";
 const bgCard = "rgba(8,21,38,0.85)";
 
-const channelColors = ["#00e5ff", "#c9a45c", "#ff2d78"];
-const channelIcons = ["◈", "⬡", "◉"];
-const channelCodes = ["CH-01", "CH-02", "CH-03"];
-const channelEmails = [
-  "info@arquantis.com",
-  "partnership@arquantis.com",
-  "investor@arquantis.com",
+const socialProfiles = [
+  {
+    name: "Instagram",
+    handle: "@arquantisinvestama",
+    url: "https://www.instagram.com/arquantisinvestama?igsh=Yzc2ZXRpMnBlYWVv",
+    color: "#ff2d78",
+  },
+  {
+    name: "TikTok",
+    handle: "@arquantis.teknolo",
+    url: "https://www.tiktok.com/@arquantis.teknolo?_r=1&_t=ZS-95AUgkyQATt",
+    color: "#00e5ff",
+  },
+  {
+    name: "X",
+    handle: "@ARQUANTIS",
+    url: "https://x.com/ARQUANTIS",
+    color: "#c9a45c",
+  },
 ];
-const channelTitleKeys = ["ch1title", "ch2title", "ch3title"];
-const channelDescKeys = ["ch1desc", "ch2desc", "ch3desc"];
 
 const ContactPage = () => {
   const { t } = useLang();
@@ -150,132 +160,82 @@ const ContactPage = () => {
                 </span>
               </div>
 
-              {channelTitleKeys.map((tk, i) => {
-                const color = channelColors[i];
-                return (
+              {socialProfiles.map((profile) => (
+                <a
+                  key={profile.name}
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-hover group"
+                  style={{
+                    display: "block",
+                    position: "relative",
+                    borderRadius: 16,
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    background: bgCard,
+                    padding: 20,
+                    marginBottom: 12,
+                    overflow: "hidden",
+                    textDecoration: "none",
+                  }}
+                >
                   <div
-                    key={i}
-                    className="card-hover group"
                     style={{
-                      position: "relative",
+                      position: "absolute",
+                      inset: 0,
                       borderRadius: 16,
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      background: bgCard,
-                      padding: 24,
-                      marginBottom: 16,
-                      overflow: "hidden",
+                      pointerEvents: "none",
+                      background: `radial-gradient(circle at top left, ${profile.color}0f 0%, transparent 65%)`,
+                    }}
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: 12,
                     }}
                   >
-                    <div
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        borderRadius: 16,
-                        pointerEvents: "none",
-                        background: `radial-gradient(circle at top left, ${color}0c 0%, transparent 60%)`,
-                        opacity: 0,
-                        transition: "opacity 0.4s",
-                      }}
-                      className="group-hover:opacity-100"
-                    />
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 1,
-                        pointerEvents: "none",
-                        background: `linear-gradient(90deg,transparent,${color},transparent)`,
-                        opacity: 0,
-                        transition: "opacity 0.4s",
-                      }}
-                      className="group-hover:opacity-100"
-                    />
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: 16,
-                      }}
-                    >
-                      <div
+                    <div style={{ minWidth: 0 }}>
+                      <p
                         style={{
-                          width: 44,
-                          height: 44,
-                          borderRadius: 12,
-                          flexShrink: 0,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: 18,
-                          color,
-                          border: `1px solid ${color}30`,
-                          background: `${color}10`,
-                          textShadow: `0 0 10px ${color}`,
+                          fontFamily: "'Orbitron',monospace",
+                          fontSize: 13,
+                          fontWeight: 700,
+                          color: "#fff",
+                          margin: 0,
                         }}
                       >
-                        {channelIcons[i]}
-                      </div>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            marginBottom: 6,
-                          }}
-                        >
-                          <h3
-                            style={{
-                              fontFamily: "'Orbitron',monospace",
-                              fontSize: 13,
-                              fontWeight: 700,
-                              color: "#fff",
-                              margin: 0,
-                            }}
-                          >
-                            {tc(tk)}
-                          </h3>
-                          <span
-                            style={{
-                              fontFamily: "'JetBrains Mono',monospace",
-                              fontSize: 9,
-                              letterSpacing: "0.15em",
-                              color,
-                            }}
-                          >
-                            {channelCodes[i]}
-                          </span>
-                        </div>
-                        <p
-                          style={{
-                            fontSize: 12,
-                            lineHeight: 1.7,
-                            color: "#7a8fa6",
-                            marginBottom: 10,
-                          }}
-                        >
-                          {tc(channelDescKeys[i])}
-                        </p>
-                        <div
-                          style={{
-                            fontFamily: "'JetBrains Mono',monospace",
-                            fontSize: 11,
-                            color,
-                            textShadow: `0 0 8px ${color}40`,
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
-                          {channelEmails[i]}
-                        </div>
-                      </div>
+                        {profile.name}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "'JetBrains Mono',monospace",
+                          fontSize: 11,
+                          color: "#7a8fa6",
+                          margin: "4px 0 0",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {profile.handle}
+                      </p>
                     </div>
+                    <span
+                      style={{
+                        color: profile.color,
+                        fontFamily: "'JetBrains Mono',monospace",
+                        fontSize: 10,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      open ↗
+                    </span>
                   </div>
-                );
-              })}
+                </a>
+              ))}
 
               {/* Office */}
               <div

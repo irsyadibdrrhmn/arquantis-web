@@ -3,6 +3,42 @@ import { useLang } from "../context/LangContext";
 
 const Footer = () => {
   const { t } = useLang();
+  const socialLinks = [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/arquantisinvestama?igsh=Yzc2ZXRpMnBlYWVv",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" />
+        </svg>
+      ),
+    },
+    {
+      name: "TikTok",
+      href: "https://www.tiktok.com/@arquantis.teknolo?_r=1&_t=ZS-95AUgkyQATt",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+          <path
+            d="M15.5 4.8c.7 1.2 1.7 2.2 3 2.8v3.1c-1.4-.1-2.7-.5-3.9-1.2v5.7a5.3 5.3 0 1 1-4.6-5.2v3.1a2.3 2.3 0 1 0 1.7 2.2V4.8h3.8Z"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "X",
+      href: "https://x.com/ARQUANTIS",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+          <path d="m4 4 6.3 8.4L4.5 20h2.9l4.2-5.4L15.9 20H20l-6.5-8.7L19.2 4h-2.9l-4 5.1L8.1 4H4Z" fill="currentColor" />
+        </svg>
+      ),
+    },
+  ];
 
   return (
     <footer className="relative bg-[#030912] border-t border-[rgba(201,164,92,0.1)] overflow-hidden">
@@ -88,6 +124,24 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <div className="mt-6">
+              <h5 className="mb-3 font-mono text-[10px] tracking-[0.25em] uppercase text-[#00e5ff]">Social</h5>
+              <div className="flex flex-wrap gap-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Arquantis ${social.name}`}
+                    className="group inline-flex items-center gap-2 rounded-lg border border-[rgba(201,164,92,0.22)] bg-[rgba(201,164,92,0.04)] px-3 py-2 text-xs text-[#7a8fa6] transition-all hover:border-[rgba(0,229,255,0.5)] hover:bg-[rgba(0,229,255,0.08)] hover:text-[#00e5ff]"
+                  >
+                    <span className="text-[#c9a45c] group-hover:text-[#00e5ff] transition-colors">{social.icon}</span>
+                    <span className="font-mono tracking-[0.12em] uppercase">{social.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
