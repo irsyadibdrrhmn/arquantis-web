@@ -50,6 +50,43 @@ export const translations = {
     heading: { id: "Tentang", en: "About" },
     headingAccent: { id: "Arquantis", en: "Arquantis" },
     p1: {
+      id: "Berawal dari keyakinan bahwa pasar keuangan modern terlalu kompleks untuk dianalisis secara manual, Arquantis didirikan untuk menjembatani kesenjangan antara ilmu data tingkat lanjut dan eksekusi pasar keuangan.",
+      en: "Starting from the belief that modern financial markets are too complex to be analyzed manually, Arquantis was founded to bridge the gap between advanced data science and financial market execution.",
+    },
+    p2: {
+      id: "Fokus utama kami adalah pada",
+      en: "Our main focus is on",
+    },
+    p2Accent: {
+      id: "riset kuantitatif dan perdagangan algoritmik.",
+      en: "quantitative research and algorithmic trading.",
+    },
+    p2b: {
+      id: "Kami tidak memprediksi arah pasar berdasarkan opini atau berita; sebaliknya, kami membangun model matematika yang mengidentifikasi inefisiensi struktural dan anomali harga jangka pendek.",
+      en: "We don't predict market direction based on opinions or news; instead, we build mathematical models that identify structural inefficiencies and short-term price anomalies..",
+    },
+    p3: {
+      id: "Dengan infrastuktur",
+      en: "With infrastructure",
+    },
+    p3Accent: { id: "teknologi eksklusif", en: "exclusive technology" },
+    p3b: {
+      id: ", kami mampu memproses terabyte data pasar historis dan real-time, mengeksekusi ribuan transaksi per hari dengan presisi milidetik, dan mengelola risiko portofolio secara dinamis tanpa intervensi manusia.",
+      en: ", We are capable of processing terabytes of historical and real-time market data, executing thousands of transactions per day with millisecond precision, and dynamically managing portfolio risk without human intervention.",
+    },
+    cta: { id: "Pelajari Lebih Lanjut", en: "Learn More" },
+    stat1Label: { id: "Model Strategi", en: "Strategy Models" },
+    stat2Label: { id: "Monitoring Sistem", en: "System Monitoring" },
+    stat3Label: { id: "Execution Latency", en: "Execution Latency" },
+    stat4Label: { id: "Market Coverage", en: "Market Coverage" },
+  },
+
+  // ─── HOME ABOUT ───────────────────────────────────────────
+  homeAbout: {
+    sectionLabel: { id: "Tentang Kami", en: "About Us" },
+    heading: { id: "Tentang", en: "About" },
+    headingAccent: { id: "Arquantis", en: "Arquantis" },
+    p1: {
       id: "PT Arquantis Teknologi Investama adalah perusahaan teknologi keuangan yang berfokus pada pengembangan sistem perdagangan kuantitatif dan algoritmik untuk pasar keuangan global.",
       en: "PT Arquantis Teknologi Investama is a financial technology company focused on developing quantitative and algorithmic trading systems for global financial markets.",
     },
@@ -68,8 +105,8 @@ export const translations = {
     },
     p3Accent: { id: "otomatisasi penuh", en: "full automation" },
     p3b: {
-      id: ", mulai dari generasi sinyal hingga eksekusi order dan manajemen risiko.",
-      en: ", from signal generation to order execution and risk management.",
+      id: ", mulai dari generasi sinyal hingga eksekusi order dan manajemen risiko, memastikan disiplin yang konsisten dalam setiap kondisi pasar.",
+      en: ", from signal generation to order execution and risk management, ensure consistent discipline in all market conditions.",
     },
     cta: { id: "Pelajari Lebih Lanjut", en: "Learn More" },
     stat1Label: { id: "Model Strategi", en: "Strategy Models" },
@@ -85,23 +122,23 @@ export const translations = {
     headingAccent: { id: "Teknologi", en: "Advantages" },
     headingAccent2: { id: "Kami", en: "" },
     sub: {
-      id: "Infrastruktur modern untuk quantitative trading yang efisien, adaptif, dan dibangun untuk skala institusional.",
-      en: "Modern infrastructure for quantitative trading that is efficient, adaptive, and built for institutional scale.",
+      id: "Infrastruktur inti yang menggerakkan strategi perdagangan kami di berbagai kelas aset.",
+      en: "The core infrastructure that powers our trading strategies across multiple asset classes.",
     },
     f1title: { id: "Riset Kuantitatif", en: "Quantitative Research" },
     f1desc: {
-      id: "Model statistik dan analitik mendalam untuk menemukan peluang alpha di pasar kompleks.",
-      en: "Deep statistical and analytical models to discover alpha opportunities in complex markets.",
+      id: "Pemodelan statistik mendalam dan kerangka backtesting yang ketat untuk menemukan alpha di pasar yang kompleks.",
+      en: "Deep statistical modeling and a rigorous backtesting framework for finding alpha in complex markets.",
     },
     f2title: { id: "Perdagangan Algoritmik", en: "Algorithmic Trading" },
     f2desc: {
-      id: "Mesin eksekusi modern dengan fokus pada konsistensi, presisi, dan efisiensi biaya.",
-      en: "Modern execution engine focused on consistency, precision, and cost efficiency.",
+      id: "Eksekusi berkecepatan tinggi dengan latensi rendah yang meminimalkan slippage dan mengoptimalkan harga masuk.",
+      en: "High-speed execution with low latency that minimizes slippage and optimizes entry prices.",
     },
     f3title: { id: "Manajemen Risiko", en: "Risk Management" },
     f3desc: {
-      id: "Pemantauan eksposur, volatilitas, dan stabilitas strategi secara real-time.",
-      en: "Real-time monitoring of exposure, volatility, and strategy stability.",
+      id: "Sistem kontrol risiko otomatis yang melindungi modal melalui diversifikasi dinamis dan pembatasan drawdown.",
+      en: "An automated risk control system that protects capital through dynamic diversification and drawdown limitations.",
     },
     learnMore: { id: "Pelajari →", en: "Explore →" },
     s1val: { id: "4+", en: "4+" },
@@ -117,35 +154,37 @@ export const translations = {
     heading: { id: "Cakupan", en: "Global" },
     headingAccent: { id: "Pasar Global", en: "Market Coverage" },
     sub: {
-      id: "Strategi lintas aset yang dirancang untuk merespons berbagai karakter pasar dengan disiplin eksekusi dan manajemen risiko.",
-      en: "Cross-asset strategies designed to respond to diverse market conditions with execution discipline and risk management.",
+      id: "Algoritma kami dirancang untuk beroperasi di berbagai kelas aset yang memiliki likuiditas tinggi dan volatilitas yang dapat dimodelkan.",
+      en: "Our algorithms are designed to operate across a wide range of asset classes that have high liquidity and modelable volatility.",
     },
     m1title: { id: "Forex", en: "Forex" },
     m1desc: {
-      id: "Strategi tren, mean reversion, dan liquidity-driven execution untuk pasar valuta asing global.",
-      en: "Trend, mean reversion, and liquidity-driven execution strategies for global foreign exchange markets.",
+      id: "Likuiditas global 24/5 dengan strategi mean-reversion dan momentum.",
+      en: "24/5 global liquidity with mean-reversion and momentum strategies.",
     },
     m2title: { id: "Crypto", en: "Crypto" },
     m2desc: {
-      id: "Model adaptif untuk memanfaatkan volatilitas tinggi dan market inefficiency pada aset digital.",
-      en: "Adaptive models to exploit high volatility and market inefficiency in digital assets.",
+      id: "Eksploitasi inefisiensi pasar di bursa aset digital terkemuka.",
+      en: "Exploiting market inefficiencies on leading digital asset exchanges.",
     },
-    m3title: { id: "Commodities", en: "Commodities" },
+    m3title: { id: "Index dan Komoditas", en: "Index and Commodities" },
     m3desc: {
-      id: "Eksposur terukur pada energi, logam, dan komoditas utama dengan pendekatan kuantitatif.",
-      en: "Measured exposure to energy, metals, and key commodities with a quantitative approach.",
+      id: "Pendekatan makro kuantitatif pada instrumen berjangka global.",
+      en: "A quantitative macro approach to global futures instruments.",
     },
-    m4title: { id: "Derivatives", en: "Derivatives" },
+    m4title: { id: "Derivatif Aset Digital", en: "Digital Asset DerivativesD" },
     m4desc: {
-      id: "Optimasi hedging, spread, dan pendekatan risiko sistematis untuk instrumen turunan.",
-      en: "Hedging optimization, spread strategies, and systematic risk approaches for derivative instruments.",
+      id: "Strategi arbitrase dan lindung nilai pada instrumen derivatif.",
+      en: "Arbitrage and hedging strategies on derivative instruments.",
     },
   },
 
   // ─── FOOTER ───────────────────────────────────────────────
   footer: {
-    boostHeading: { id: "Boost Trading Anda.", en: "Boost Your Trading." },
-    boostSub: { id: "Mulai dengan Arquantis.", en: "Start with Arquantis." },
+    boostHeading: {
+      id: "Jelajahi Teknologi Trading Kami.",
+      en: "Explore Our Trading Technology.",
+    },
     ctaPrimary: { id: "Hubungi Kami Sekarang →", en: "Contact Us Now →" },
     ctaSecondary: { id: "Lihat Produk", en: "View Products" },
     tagline: {

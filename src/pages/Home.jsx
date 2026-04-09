@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
-import About from "../components/About";
+import HomeAbout from "../components/HomeAbout";
 import Features from "../components/Features";
 import Markets from "../components/Markets";
 
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Layout>
       <Hero />
-      <About />
+      <HomeAbout />
       <Features />
       <Markets />
     </Layout>
