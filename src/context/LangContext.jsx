@@ -30,8 +30,8 @@ export const translations = {
     },
     h1b: { id: "Pasar Keuangan Global", en: "Global Financial Markets" },
     desc: {
-      id: "Sistem algoritmik generasi berikutnya yang menggabungkan riset kuantitatif mendalam, kecerdasan buatan, dan infrastruktur berkinerja tinggi untuk",
-      en: "Next-generation algorithmic systems combining deep quantitative research, artificial intelligence, and high-performance infrastructure for",
+      id: "Kami membangun sistem perdagangan algoritmik canggih yang menggabungkan riset kuantitatif mendalam, kecerdasan buatan, dan infrastruktur berkinerja tinggi untuk menghasilkan",
+      en: "We build advanced algorithmic trading systems that combine in-depth quantitative research, artificial intelligence, and high-performance infrastructure to generate",
     },
     descAccent: { id: "alpha yang konsisten", en: "consistent alpha" },
     btn1: { id: "Jelajahi Teknologi", en: "Explore Technology" },
