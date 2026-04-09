@@ -220,10 +220,13 @@ export const translations = {
     },
     technology: {
       eyebrow: { id: "Core_Systems", en: "Core_Systems" },
-      title: { id: "Teknologi Kami", en: "Our Technology" },
+      title: {
+        id: "Infrastruktur Teknologi Inti",
+        en: "Core Technology Infrastructure",
+      },
       subtitle: {
-        id: "Infrastruktur, model AI, dan lapisan manajemen risiko yang menopang performa sistem trading modern.",
-        en: "Infrastructure, AI models, and risk management layers that underpin modern trading system performance.",
+        id: "Sistem terintegrasi yang mengubah data mentah menjadi keputusan perdagangan yang presisi dan menguntungkan.",
+        en: "An integrated system that turns raw data into precise and profitable trading decisions.",
       },
     },
     products: {
@@ -271,40 +274,61 @@ export const translations = {
   // ─── TECHNOLOGY PAGE ──────────────────────────────────────
   technology: {
     s1label: { id: "Trading Engine", en: "Trading Engine" },
-    s1title: { id: "Mesin Eksekusi Modern", en: "Modern Execution Engine" },
-    s1p1: { id: "FIX API latency rendah", en: "Low-latency FIX API" },
-    s1p2: { id: "Smart order routing", en: "Smart order routing" },
-    s1p3: { id: "Slippage control", en: "Slippage control" },
+    s1title: { id: "Riset Kuantitatif", en: "Quantitative Research" },
+    s1p1: { id: "Analisis Deret Waktu", en: "Time Series Analysis" },
+    s1p2: {
+      id: "Pemodelan Volatilitas Stokastik",
+      en: "Stochastic Volatility Modeling",
+    },
+    s1p3: {
+      id: "Pengujian hipotesis statistik yang ketat",
+      en: "Rigorous statistical hypothesis testing",
+    },
     s1p4: {
-      id: "Modular microservices architecture",
-      en: "Modular microservices architecture",
+      id: "Simulasi Monte Carlo untuk stress testing",
+      en: "Monte Carlo simulation for stress testing",
     },
     s2label: { id: "Machine Learning", en: "Machine Learning" },
     s2title: {
-      id: "Model Adaptif Berbasis AI",
-      en: "AI-Based Adaptive Models",
+      id: "Model Machine Learning",
+      en: "Machine Learning Models",
     },
     s2p1: {
-      id: "Neural network forecasting",
-      en: "Neural network forecasting",
+      id: "Jaringan saraf tiruan untuk pengenalan pola",
+      en: "Artificial neural networks for pattern recognition",
     },
     s2p2: {
-      id: "Feature engineering pipeline",
-      en: "Feature engineering pipeline",
+      id: "Algoritma Random Forest & Gradient Boosting",
+      en: "Random Forest & Gradient Boosting Algorithm",
     },
-    s2p3: { id: "Sentiment analysis", en: "Sentiment analysis" },
-    s2p4: { id: "Reinforcement learning", en: "Reinforcement learning" },
+    s2p3: {
+      id: "Natural Language Processing (NLP) untuk analisis sentimen",
+      en: "Natural Language Processing (NLP) for sentiment analysis",
+    },
+    s2p4: {
+      id: "Pembelajaran penguatan (Reinforcement Learning) dinamis",
+      en: "Dynamic reinforcement learning",
+    },
     s3label: { id: "Risk Layer", en: "Risk Layer" },
     s3title: {
-      id: "Manajemen Risiko Real-Time",
-      en: "Real-Time Risk Management",
+      id: "Sistem Manajemen Risiko",
+      en: "Risk Management System",
     },
-    s3p1: { id: "Value at Risk (VaR)", en: "Value at Risk (VaR)" },
-    s3p2: { id: "Kill-switch automation", en: "Kill-switch automation" },
-    s3p3: { id: "Portfolio diversification", en: "Portfolio diversification" },
+    s3p1: {
+      id: "Pemantauan eksposur real-time 24/7",
+      en: "24/7 real-time exposure monitoring",
+    },
+    s3p2: {
+      id: "Perhitungan Value at Risk (VaR) dinamis",
+      en: "Dynamic Value at Risk (VaR) calculation",
+    },
+    s3p3: {
+      id: "Mekanisme kill-switch otomatis",
+      en: "Automatic kill-switch mechanism",
+    },
     s3p4: {
-      id: "Real-time exposure monitoring",
-      en: "Real-time exposure monitoring",
+      id: "Diversifikasi portofolio algoritmik",
+      en: "Algorithmic portfolio diversification",
     },
     ctaEyebrow: {
       id: "Integrated_Infrastructure",
@@ -326,20 +350,29 @@ export const translations = {
     heading: { id: "Solusi", en: "Systematic" },
     headingAccent: { id: "Perdagangan", en: "Trading" },
     headingAccent2: { id: "Sistematis", en: "Solutions" },
-    p1title: { id: "Algoritma Forex", en: "Forex Algorithm" },
+    p1title: {
+      id: "Algoritma Forex Arquantis",
+      en: "Arquantis Forex Algorithm",
+    },
     p1desc: {
-      id: "Strategi otomatis berbasis momentum, mean reversion, dan liquidity pattern pada pasar valuta asing global.",
-      en: "Automated strategies based on momentum, mean reversion, and liquidity patterns in global foreign exchange markets.",
+      id: "Sistem perdagangan otomatis yang dirancang khusus untuk pasar valuta asing global. Memanfaatkan likuiditas tinggi untuk mengeksekusi strategi mean-reversion dan trend-following pada pasangan mata uang utama.",
+      en: "Automated trading system designed specifically for the global foreign exchange market. Utilizes high liquidity to execute mean-reversion and trend-following strategies on major currency pairs.",
     },
-    p2title: { id: "Algoritma Crypto", en: "Crypto Algorithm" },
+    p2title: {
+      id: "Algoritma Crypto Arquantis",
+      en: "Arquantis Crypto Algorithm",
+    },
     p2desc: {
-      id: "Model kuantitatif untuk pasar digital yang memanfaatkan volatilitas tinggi dan peluang arbitrase sistematis.",
-      en: "Quantitative models for digital markets that exploit high volatility and systematic arbitrage opportunities.",
+      id: "Strategi kuantitatif yang mengeksploitasi inefisiensi harga dan volatilitas tinggi di pasar aset digital. Menggunakan model momentum dan arbitrase statistik lintas bursa.",
+      en: "A quantitative strategy that exploits price inefficiencies and high volatility in digital asset markets. Using momentum models and cross-exchange statistical arbitrage.",
     },
-    p3title: { id: "Platform Analitik", en: "Analytics Platform" },
+    p3title: {
+      id: "Platform Analitik Kuantitatif",
+      en: "Quantitative Analytics Platform",
+    },
     p3desc: {
-      id: "Dashboard observasi performa, monitoring risiko, dan evaluasi strategi untuk kebutuhan institusional.",
-      en: "Performance observation dashboard, risk monitoring, and strategy evaluation for institutional needs.",
+      id: "Perankat lunak analitik tingkat institusional yang memberikan visibilitas penuh terhadap kinerja portofolio, metrik risiko, dan atribusi alpha secara real-time.",
+      en: "Institutional-grade analytics software that provides full visibility into portfolio performance, risk metrics, and alpha attribution in real-time.",
     },
     learnMore: { id: "Pelajari Lebih Lanjut", en: "Learn More" },
     tagMomentum: { id: "Momentum", en: "Momentum" },
@@ -580,6 +613,60 @@ export const translations = {
     },
     posAccent1: { id: "Global Vision", en: "Global Vision" },
     posAccent2: { id: "Quant Precision", en: "Quant Precision" },
+    vmLabel: { id: "Visi_Misi", en: "Vision_Mission" },
+    vmHeading: { id: "Visi & Misi Perusahaan", en: "Company Vision & Mission" },
+    vmSub: {
+      id: "Kami membangun fondasi perusahaan dengan arah jangka panjang yang jelas: visi yang berani dan misi yang terukur untuk menciptakan dampak nyata di pasar keuangan global.",
+      en: "We build our company on a clear long-term direction: a bold vision and a measurable mission to create real impact in global financial markets.",
+    },
+    visionTitle: { id: "Visi", en: "Vision" },
+    visionText: {
+      id: "Menjadi perusahaan teknologi kuantitatif terdepan yang menetapkan standar baru dalam inovasi, transparansi, dan kinerja investasi sistematis.",
+      en: "To become a leading quantitative technology company that sets a new standard in innovation, transparency, and systematic investment performance.",
+    },
+    missionTitle: { id: "Misi", en: "Mission" },
+    missionPoint1: {
+      id: "Mengembangkan teknologi perdagangan algoritmik yang inovatif dan tangguh.",
+      en: "Developing innovative and robust algorithmic trading technology.",
+    },
+    missionPoint2: {
+      id: "Menerapkan model kuantitatif canggih untuk menghasilkan imbal hasil yang konsisten.",
+      en: "Applying advanced quantitative models to generate consistent returns.",
+    },
+    missionPoint3: {
+      id: "Menyediakan solusi investasi sistematis yang dapat diskalakan untuk mitra kami.",
+      en: "Providing scalable systematic investment solutions to our partners.",
+    },
+    missionPoint4: {
+      id: "Mempertahankan disiplin risiko yang ketat dalam setiap aspek operasional.",
+      en: "Maintaining strict risk discipline in every aspect of operations.",
+    },
+    valuesLabel: { id: "Nilai_Perusahaan", en: "Company_Values" },
+    valuesHeading: { id: "Nilai-Nilai Perusahaan", en: "Our Company Values" },
+    valuesSub: {
+      id: "Prinsip yang memandu setiap baris kode yang kami tulis.",
+      en: "The principles that guide every line of code we write.",
+    },
+    value1Title: { id: "Inovasi", en: "Innovation" },
+    value1Text: {
+      id: "Kami terus mendorong batas teknologi perdagangan melalui penelitian berkelanjutan dan adopsi metodologi baru.",
+      en: "We continue to push the boundaries of trading technology through continuous research and adoption of new methodologies.",
+    },
+    value2Title: { id: "Integritas", en: "Integrity" },
+    value2Text: {
+      id: "Transparansi penuh dalam metodologi kami dan komitmen teguh terhadap kepentingan terbaik mitra kami.",
+      en: "Full transparency in our methodology and a firm commitment to the best interests of our partners.",
+    },
+    value3Title: { id: "Pendekatan Ilmiah", en: "Scientific Approach" },
+    value3Text: {
+      id: "Setiap strategi didasarkan pada pengujian hipotesis yang ketat, signifikan statistik, dan validasi empiris.",
+      en: "Each strategy is based on rigorous hypothesis testing, statistical significance, and empirical validation.",
+    },
+    value4Title: { id: "Disiplin Risiko", en: "Risk Discipline" },
+    value4Text: {
+      id: "Manajemen risiko bukan sekedar fitur, melainkan fondasi dari setiap algoritma yang kami kembangkan.",
+      en: "Risk management is not just a feature, but the foundation of every algorithm we develop.",
+    },
   },
 };
 
