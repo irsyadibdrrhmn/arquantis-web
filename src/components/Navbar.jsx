@@ -35,14 +35,14 @@ const Navbar = () => {
       {/* top accent line */}
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#c9a45c] to-transparent opacity-60" />
 
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-4">
 
           {/* Logo */}
-          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
+          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 sm:gap-3 group">
             
             <div className="block">
-              <span className="font-display text-xs font-bold tracking-[0.15em] text-[#c9a45c] uppercase">
+              <span className="font-display text-[11px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-[0.15em] text-[#c9a45c] uppercase">
                 Arquantis
               </span>
               <div className="hidden sm:block text-[9px] tracking-[0.3em] text-[#7a8fa6] uppercase font-mono">
@@ -132,6 +132,8 @@ const Navbar = () => {
             </button>
             <button
               onClick={() => setIsOpen((p) => !p)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[rgba(201,164,92,0.2)]"
             >
               <div className="relative h-4 w-5">
@@ -144,8 +146,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`overflow-hidden transition-all duration-300 lg:hidden ${isOpen ? "max-h-[600px] pb-4" : "max-h-0"}`}>
-          <div className="rounded-xl border border-[rgba(201,164,92,0.15)] bg-[rgba(5,13,26,0.95)] backdrop-blur-xl p-3">
+        <div className={`overflow-hidden transition-all duration-300 lg:hidden ${isOpen ? "max-h-[600px] pb-3 sm:pb-4" : "max-h-0"}`}>
+          <div className="rounded-xl border border-[rgba(201,164,92,0.15)] bg-[rgba(5,13,26,0.95)] backdrop-blur-xl p-2.5 sm:p-3">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -153,7 +155,7 @@ const Navbar = () => {
                 end={item.path === "/"}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block rounded-lg px-4 py-3 text-xs font-semibold tracking-[0.12em] uppercase transition-all ${
+                  `block rounded-lg px-3 sm:px-4 py-3 text-[11px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.12em] uppercase transition-all ${
                     isActive
                       ? "bg-[rgba(0,229,255,0.08)] text-[#00e5ff] border-l-2 border-[#00e5ff]"
                       : "text-[#7a8fa6] hover:text-[#c9a45c] hover:bg-[rgba(201,164,92,0.05)]"

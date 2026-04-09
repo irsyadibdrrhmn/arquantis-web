@@ -47,21 +47,21 @@ const Footer = () => {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(201,164,92,0.4)] to-transparent" />
 
       {/* CTA banner */}
-      <div className="relative border-b border-[rgba(255,255,255,0.04)] py-16">
-        <div className="mx-auto max-w-6xl px-6 text-center">
+      <div className="relative border-b border-[rgba(255,255,255,0.04)] py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-[#c9a45c] mb-4">// Ready_To_Start</p>
-          <h2 className="font-display text-2xl font-black text-white md:text-4xl">
+          <h2 className="font-display text-xl font-black text-white sm:text-2xl md:text-4xl">
             {t("footer", "boostHeading")}<br />
             <span className="text-gradient-gold">{t("footer", "boostSub")}</span>
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="relative overflow-hidden rounded-xl group">
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+            <Link to="/contact" className="relative overflow-hidden rounded-xl group w-full sm:w-auto">
               <span className="absolute inset-0 btn-shimmer" />
               <span className="relative flex items-center gap-2 px-7 py-3.5 font-display text-xs font-bold tracking-[0.15em] uppercase text-[#050d1a]">
                 {t("footer", "ctaPrimary")}
               </span>
             </Link>
-            <Link to="/products" className="rounded-xl border border-[rgba(0,229,255,0.3)] bg-[rgba(0,229,255,0.04)] px-7 py-3.5 font-display text-xs font-bold tracking-[0.15em] uppercase text-[#00e5ff] hover:bg-[rgba(0,229,255,0.08)] transition-all">
+            <Link to="/products" className="w-full sm:w-auto rounded-xl border border-[rgba(0,229,255,0.3)] bg-[rgba(0,229,255,0.04)] px-7 py-3.5 font-display text-xs font-bold tracking-[0.15em] uppercase text-[#00e5ff] hover:bg-[rgba(0,229,255,0.08)] transition-all">
               {t("footer", "ctaSecondary")}
             </Link>
           </div>
@@ -69,7 +69,7 @@ const Footer = () => {
       </div>
 
       {/* Links */}
-      <div className="relative mx-auto max-w-6xl px-6 py-14">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -147,7 +147,7 @@ const Footer = () => {
       </div>
 
       <div className="relative border-t border-[rgba(255,255,255,0.04)] py-4">
-        <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-[#3a5070]">
             System Status: <span className="text-[#00e5ff]">● {t("footer","statusOnline")}</span>
           </span>

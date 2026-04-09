@@ -42,7 +42,7 @@ const InvestorPage = () => {
         accent="cyan"
       />
 
-      <section style={{ background:bgDark, position:"relative", padding:"96px 0", overflow:"hidden" }}>
+      <section className="investor-section" style={{ background:bgDark, position:"relative", padding:"96px 0", overflow:"hidden" }}>
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", backgroundImage:"linear-gradient(rgba(0,229,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.04) 1px,transparent 1px)", backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute", top:0, left:"20%", width:500, height:500, background:"#00e5ff", opacity:0.02, filter:"blur(120px)", borderRadius:"50%", pointerEvents:"none" }} />
         <div style={{ position:"absolute", bottom:"20%", right:0, width:400, height:400, background:"#c9a45c", opacity:0.025, filter:"blur(100px)", borderRadius:"50%", pointerEvents:"none" }} />
@@ -50,8 +50,8 @@ const InvestorPage = () => {
         <div style={{ position:"relative", maxWidth:1152, margin:"0 auto", padding:"0 24px" }}>
 
           {/* Metrics bar */}
-          <div style={{ borderRadius:16, border:"1px solid rgba(0,229,255,0.12)", background:"rgba(8,21,38,0.7)", padding:"24px 32px", marginBottom:56, backdropFilter:"blur(20px)" }}>
-            <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:0 }}>
+          <div className="investor-metrics-wrap" style={{ borderRadius:16, border:"1px solid rgba(0,229,255,0.12)", background:"rgba(8,21,38,0.7)", padding:"24px 32px", marginBottom:56, backdropFilter:"blur(20px)" }}>
+            <div className="investor-metrics-grid" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:0 }}>
               {keyMetrics.map((m, i) => (
                 <div key={i} style={{ textAlign:"center", borderRight: i < keyMetrics.length-1 ? "1px solid rgba(255,255,255,0.05)" : "none", padding:"8px 0" }}>
                   <div style={{ fontFamily:"'Orbitron',monospace", fontSize:28, fontWeight:900, background:"linear-gradient(135deg,#00e5ff,#4dd9ff)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>{m.val}</div>
@@ -62,7 +62,7 @@ const InvestorPage = () => {
           </div>
 
           {/* Two-col */}
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:48 }}>
+          <div className="investor-main-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:48 }}>
 
             {/* LEFT */}
             <div>
@@ -147,8 +147,8 @@ const InvestorPage = () => {
           <div style={{ marginTop:64, borderRadius:20, overflow:"hidden", position:"relative", background:"linear-gradient(135deg, #081526 0%, #0d2040 50%, #081526 100%)" }}>
             <div style={{ position:"absolute", inset:0, backgroundImage:"linear-gradient(rgba(201,164,92,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,164,92,0.05) 1px,transparent 1px)", backgroundSize:"60px 60px", pointerEvents:"none" }} />
             <div style={{ position:"absolute", top:0, left:0, right:0, height:1, background:"linear-gradient(90deg,transparent,rgba(201,164,92,0.5),transparent)" }} />
-            <div style={{ position:"relative", textAlign:"center", padding:"64px 32px" }}>
-              <h2 style={{ fontFamily:"'Orbitron',monospace", fontSize:32, fontWeight:900, color:"#fff", marginBottom:16 }}>
+            <div className="investor-cta-inner" style={{ position:"relative", textAlign:"center", padding:"64px 32px" }}>
+              <h2 className="investor-cta-title" style={{ fontFamily:"'Orbitron',monospace", fontSize:32, fontWeight:900, color:"#fff", marginBottom:16 }}>
                 {ti("ctaTitle")}{" "}
                 <span style={{ background:"linear-gradient(135deg,#e0c68a,#c9a45c)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
                   {ti("ctaAccent")}

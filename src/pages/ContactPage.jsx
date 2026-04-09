@@ -74,6 +74,7 @@ const ContactPage = () => {
       />
 
       <section
+        className="contact-section"
         style={{
           background: bgDark,
           position: "relative",
@@ -129,6 +130,7 @@ const ContactPage = () => {
           }}
         >
           <div
+            className="contact-main-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1.5fr",
@@ -302,6 +304,7 @@ const ContactPage = () => {
 
             {/* RIGHT: form */}
             <div
+              className="contact-form-card"
               style={{
                 position: "relative",
                 borderRadius: 20,
@@ -371,6 +374,7 @@ const ContactPage = () => {
               </h2>
 
               <div
+                className="contact-fields-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",

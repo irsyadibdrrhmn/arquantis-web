@@ -30,7 +30,7 @@ const ResearchPage = () => {
         accent="gold"
       />
 
-      <section style={{ background: bgDark, position:"relative", padding:"96px 0", overflow:"hidden" }}>
+      <section className="research-section" style={{ background: bgDark, position:"relative", padding:"96px 0", overflow:"hidden" }}>
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", backgroundImage:"linear-gradient(rgba(0,229,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.04) 1px,transparent 1px)", backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute", top:"30%", right:0, width:400, height:400, background:"#c9a45c", opacity:0.025, filter:"blur(100px)", borderRadius:"50%", pointerEvents:"none" }} />
         <div style={{ position:"absolute", bottom:"10%", left:"10%", width:300, height:300, background:"#9b5de5", opacity:0.025, filter:"blur(90px)", borderRadius:"50%", pointerEvents:"none" }} />
@@ -46,7 +46,7 @@ const ResearchPage = () => {
           </div>
 
           {/* Cards grid */}
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))", gap:24 }}>
+          <div className="research-grid" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))", gap:24 }}>
             {titleKeys.map((tk, i) => {
               const color = researchColors[i];
               return (
@@ -85,7 +85,7 @@ const ResearchPage = () => {
 
           {/* CTA */}
           <div style={{ marginTop:64, textAlign:"center" }}>
-            <div style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", gap:20, borderRadius:16, padding:"40px 56px", border:"1px solid rgba(201,164,92,0.2)", background:"rgba(8,21,38,0.7)", backdropFilter:"blur(20px)" }}>
+            <div className="research-cta-card" style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", gap:20, borderRadius:16, padding:"40px 56px", border:"1px solid rgba(201,164,92,0.2)", background:"rgba(8,21,38,0.7)", backdropFilter:"blur(20px)" }}>
               <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:10, letterSpacing:"0.35em", textTransform:"uppercase", color:"#c9a45c" }}>
                 // {tr("ctaEyebrow")}
               </span>
